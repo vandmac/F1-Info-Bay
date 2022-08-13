@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/home']">Start</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/news']">Aktualności</a>
+      <!-- <a mat-list-item href="#">Aktualności</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/last-race']">Ostatni wyścig</a>
+      <!-- <a mat-list-item href="#">Ostatni wyścig</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/teams']">Konstruktorzy</a>
+      <!-- <a mat-list-item href="#">Konstruktorzy</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/drivers']">Kierowcy</a>
+      <!-- <a mat-list-item href="#">Kierowcy</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/races']">Wyścigi</a>
+      <!-- <a mat-list-item href="#">Wyścigi</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/circuits']">Tory</a>
+      <!-- <a mat-list-item href="#">Tory</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/statistics']">Statystyki</a>
+      <!-- <a mat-list-item href="#">Statystyki</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/search-engine']">Wyszukiwarka</a>
+      <!-- <a mat-list-item href="#">Wyszukiwarka</a> -->
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/about']">O serwisie</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img src="../../assets/images/F1logo/32x32.png" alt="Logo F1">
+      <span>Info Bay</span>
+
+    </mat-toolbar>
+    <!-- page content -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
