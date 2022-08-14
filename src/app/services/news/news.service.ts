@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { shareReplay } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,12 @@ export class NewsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getposts() {
-    return this.httpClient.get(this.url, this.options);
+  public getnews() {
+    return this.httpClient.get(this.url, this.options).pipe(shareReplay());
   }
 }
+
+// public getLastRace() {
+//   return this.http
+//     .get<LastRace>('https://ergast.com/api/f1/current/last/results.json')
+//     .pipe(shareReplay());

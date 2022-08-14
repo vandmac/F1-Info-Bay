@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
 import { LastRaceService } from '../../services/last-race/last-race.service';
-// import { LastRace } from 'src/app/services/last-race/last-race';
+
 
 @Component({
   selector: 'app-last-race',
