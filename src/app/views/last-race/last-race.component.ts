@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LastRaceService } from '../../services/last-race/last-race.service';
+import { ErgastService } from 'src/app/services/ergast.service';
 
 @Component({
   selector: 'app-last-race',
@@ -8,9 +9,10 @@ import { LastRaceService } from '../../services/last-race/last-race.service';
 })
 export class LastRaceComponent implements OnInit {
   public lastRace$;
-  
+ 
   constructor(private lastRaceService: LastRaceService) {
     this.lastRace$ = this.lastRaceService.getLastRace();
+
   }
 
   ngOnInit(): void {}

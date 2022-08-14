@@ -5,6 +5,11 @@
     <!-- <p>{{ (lastRace | async)?.MRData?.RaceTable?.Races?.[0]?.Results?.[0]?.Driver?.familyName | json}}</p> -->
     <div *ngIf="(lastRace$ | async) as lastRace">
         
-            {{ lastRace.MRData.RaceTable.Races[0].Results[0].Driver.familyName }}
+            <p *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i">
+                {{i+1}}
+                {{ lastRace.MRData.RaceTable.Races[0].Results[i].Driver.familyName }} {{ lastRace.MRData.RaceTable.Races[0].Results[i].Driver.givenName }}</p>
     </div>
+
+
+
 </div>
