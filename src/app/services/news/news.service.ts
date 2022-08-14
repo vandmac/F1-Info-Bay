@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { shareReplay } from 'rxjs';
+import {News} from './news';
 
 @Injectable({
   providedIn: 'root',
 })
+  
 export class NewsService {
   private options = {
     method: 'GET',
@@ -17,8 +19,8 @@ export class NewsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getnews() {
-    return this.httpClient.get(this.url, this.options).pipe(shareReplay());
+  public getNews() {
+    return this.httpClient.get<News>(this.url, this.options).pipe(shareReplay());
   }
 }
 

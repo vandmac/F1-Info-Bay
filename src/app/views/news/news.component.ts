@@ -10,11 +10,11 @@ export class NewsComponent implements OnInit {
 public news$:any;
 
   constructor(private newsService: NewsService){
-    this.news$.this.newsService.getNews();
+    this.news$.newsService.getNews();
      
   }
   
- 
+
 
   ngOnInit(): void {}
 

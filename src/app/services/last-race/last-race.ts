@@ -9,7 +9,7 @@ export interface LastRace {
     RaceTable: {
       season: number;
       round: number;
-      Races: [
+      Races:
         {
           season: number;
           round: number;
@@ -28,7 +28,7 @@ export interface LastRace {
           };
           date: string;
           time: string;
-          Results: [
+          Results:
             {
               number: number;
               position: number;
@@ -68,10 +68,8 @@ export interface LastRace {
                   speed: number;
                 };
               };
-            }
-          ];
-        }
-      ];
+            }[];
+        }[]
     };
   };
 }
