@@ -5,7 +5,7 @@
     <!-- <p>{{ (lastRace | async)?.MRData?.RaceTable?.Races?.[0]?.Results?.[0]?.Driver?.familyName | json}}</p> -->
     <div *ngIf="(lastRace$ | async) as lastRace">
 
-        <table mat-table class="mat-elevation-z8">
+        <!-- <table mat-table class="mat-elevation-z8">
             <ng-container *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i">
                 <th mat-header-cell *matColumnCellDef>Miejsce</th>
                 <tr mat-cell>{{i+1}}
@@ -16,7 +16,23 @@
                 </tr>
 
             </ng-container>
+        </table> -->
+
+        <table mat-table>
+            <ng-container *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i"
+                matColumnDef="Nazwisko">
+                <th mat-header-cell *matHeaderCellDef> Nazwisko </th>
+                <tr mat-cell> {{i+1}} {{ lastRace.MRData.RaceTable.Races[0].Results[i].Driver.familyName }} {{
+                    lastRace.MRData.RaceTable.Races[0].Results[i].Driver.givenName }}
+                    {{ lastRace.MRData.RaceTable.Races[0].Results[i].Constructor.name }}
+                    {{ lastRace.MRData.RaceTable.Races[0].Results[i].grid}}
+                </tr>
+
+
+
+            </ng-container>
         </table>
+
     </div>
 
 
