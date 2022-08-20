@@ -7,7 +7,7 @@
         
             <p *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i">
                 {{i+1}}
-                {{ lastRace.MRData.RaceTable.Races[0].Results[i].Driver.familyName }}
+                {{ result.Driver.familyName }}
                 {{ lastRace.MRData.RaceTable.Races[0].Results[i].Driver.givenName }}
                 {{ lastRace.MRData.RaceTable.Races[0].Results[i].Constructor.name }}
                 {{ lastRace.MRData.RaceTable.Races[0].Results[i].grid}}
@@ -16,7 +16,6 @@
                 <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].FastestLap.AverageSpeed.speed}} -->
             </p>
     </div>
-
 
 
 </div>
