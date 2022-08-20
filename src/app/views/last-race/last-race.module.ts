@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { LastRaceRoutingModule } from './last-race-routing.module';
 import { LastRaceComponent } from './last-race.component';
+import { MaterialModule } from '../../material/material.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { LastRaceComponent } from './last-race.component';
   ],
   imports: [
     CommonModule,
-    LastRaceRoutingModule
+    LastRaceRoutingModule,
+    MaterialModule
   ]
 })
 export class LastRaceModule { }
