@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { LastRaceService } from '../../services/last-race/last-race.service';
+// import { LastRace } from '../../services/last-race/last-race.service';
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-last-race',
@@ -8,7 +10,10 @@ import { LastRaceService } from '../../services/last-race/last-race.service';
   styleUrls: ['./last-race.component.scss'],
 })
 export class LastRaceComponent implements OnInit {
-  public lastRace$;
+  displayedColumns: string[] = ['position', 'givenName','familyName', 'constructor', 'grid'];
+  public lastRace$: Observable<LastRaceService>;
+  // public dataSource = new MatTableDataSource<LastRaceService>([]);
+
 
   constructor(private lastRaceService: LastRaceService) {
     this.lastRace$ = this.lastRaceService.getLastRace();

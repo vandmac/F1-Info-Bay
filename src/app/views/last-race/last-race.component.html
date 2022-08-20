@@ -3,19 +3,58 @@
 <div>
 
     <!-- <p>{{ (lastRace | async)?.MRData?.RaceTable?.Races?.[0]?.Results?.[0]?.Driver?.familyName | json}}</p> -->
-    <div *ngIf="(lastRace$ | async) as lastRace">
-        
-            <p *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i">
-                {{i+1}}
-                {{ result.Driver.familyName }}
-                {{ lastRace.MRData.RaceTable.Races[0].Results[i].Driver.givenName }}
-                {{ lastRace.MRData.RaceTable.Races[0].Results[i].Constructor.name }}
-                {{ lastRace.MRData.RaceTable.Races[0].Results[i].grid}}
-                <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].Time.time}} -->
-                <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].status}} -->
-                <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].FastestLap.AverageSpeed.speed}} -->
-            </p>
-    </div>
+    <!-- <div *ngIf="(lastRace$ | async) as lastRace">
 
+        <p *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i">
+            {{i+1}}
+            {{ result.Driver.familyName }}
+            {{ result.Driver.givenName }}
+            {{ result.Constructor.name }}
+            {{ result.grid}} -->
+            <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].Time.time}} -->
+            <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].status}} -->
+            <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].FastestLap.AverageSpeed.speed}} -->
+        <!-- </p>
+    </div> -->
+
+    <div *ngIf="(lastRace$ | async) as lastRace; else loading" >
+
+        <p>givenName: {{lastRace.givenName}}</p>
+        <p>givenName: {{lastRace.familyName}}</p>
+        <p>givenName: {{lastRace.ConstructorName}}</p>
+        <p>givenName: {{lastRace.grid}}</p>
+      
+
+        <table mat-table [dataSource]="lastRace.Results">
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> Position </th>
+                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+            </ng-container>
+            <ng-container matColumnDef="driver">
+                <th mat-header-cell *matHeaderCellDef> givenName </th>
+                <td mat-cell *matCellDef="let element"> {{element.driver.givenName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="driver">
+                <th mat-header-cell *matHeaderCellDef> familyName </th>
+                <td mat-cell *matCellDef="let element"> {{element.driver.familyName}} </td>
+            </ng-container>
+            <ng-container matColumnDef="constructor">
+                <th mat-header-cell *matHeaderCellDef> Constructor </th>
+                <td mat-cell *matCellDef="let element"> {{element.constructor}} </td>
+            </ng-container>
+            <ng-container matColumnDef="grid">
+                <th mat-header-cell *matHeaderCellDef> Grid </th>
+                <td mat-cell *matCellDef="let element"> {{element.grid}} </td>
+            </ng-container>
+          
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+      
+      </div>
+      
+      <ng-template #loading>
+        Loading....
+      </ng-template>
 
 </div>

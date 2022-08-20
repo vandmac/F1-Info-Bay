@@ -75,3 +75,11 @@ export interface LastRace {
     };
   };
 }
+
+export interface LastRaceService {
+  position: number;
+  givenName: string;
+  familyName: string;
+  constructor: string;
+  grid: number;
+  }
