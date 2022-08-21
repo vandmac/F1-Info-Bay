@@ -13,7 +13,7 @@ export class LastRaceComponent implements OnInit {
   constructor(private lastRaceService: LastRaceService) {
     this.lastRace$ = this.lastRaceService.getLastRace();
   }
-  displayedColumns: string[] = ['Position', 'Driver','Constructor'];
+  displayedColumns: string[] = ['Position', 'Driver', 'Constructor'];
   public lastRace$: Observable<Race>;
 
   ngOnInit(): void {}
