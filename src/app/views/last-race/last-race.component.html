@@ -1,45 +1,49 @@
-<p>last-race works!</p>
+<div *ngIf="(lastRace$ | async) as lastRace; else loading">
+
+    <p>Wyścig: {{lastRace.raceName}}</p>
+    <p>Tor: {{lastRace.Circuit.circuitName}}</p>
+
+    <table mat-table [dataSource]="lastRace.Results"mat-elevation-z8>
+        <ng-container matColumnDef="Position">
+            <th mat-header-cell *matHeaderCellDef> Miejsce </th>
+            <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+        </ng-container>
+        <ng-container matColumnDef="Driver">
+            <th mat-header-cell *matHeaderCellDef> Kierowca </th>
+            <td mat-cell *matCellDef="let element"> {{element.Driver.givenName}} {{element.Driver.familyName}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Constructor">
+            <th mat-header-cell *matHeaderCellDef> Konstruktor </th>
+            <td mat-cell *matCellDef="let element"> {{element.Constructor.name}}</td>
+        </ng-container>
+        <!-- <ng-container matColumnDef="Time">
+                <th mat-header-cell *matHeaderCellDef> Czas </th>
+                <td mat-cell *matCellDef="let element"> {{element.ResultTime.time}}</td>
+            </ng-container> -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+</div>
+
+<ng-template #loading>
+    Loading....
+</ng-template>
+
 
 <div>
-
     <!-- <p>{{ (lastRace | async)?.MRData?.RaceTable?.Races?.[0]?.Results?.[0]?.Driver?.familyName | json}}</p> -->
     <!-- <div *ngIf="(lastRace$ | async) as lastRace">
-
-        <p *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i">
-            {{i+1}}
-            {{ result.Driver.familyName }}
-            {{ result.Driver.givenName }}
-            {{ result.Constructor.name }}
-            {{ result.grid}} -->
-            <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].Time.time}} -->
-            <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].status}} -->
-            <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].FastestLap.AverageSpeed.speed}} -->
-        <!-- </p>
-    </div> -->
-
-    <div *ngIf="(lastRace$ | async) as lastRace; else loading" >
-
-        <p>race name: {{lastRace.raceName}}</p>
-        <p>givenName: {{lastRace.Circuit.circuitName}</p>
-      
-
-        <table mat-table [dataSource]="lastRace.Results">
-            <ng-container matColumnDef="position">
-                <th mat-header-cell *matHeaderCellDef> Position </th>
-                <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-            </ng-container>
-            <ng-container matColumnDef="Driver">
-                <th mat-header-cell *matHeaderCellDef> Driver </th>
-                <td mat-cell *matCellDef="let element"> {{element.driver.givenName}} {{element.driver.familyName}}</td>
-            </ng-container>
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-      
-      </div>
-      
-      <ng-template #loading>
-        Loading....
-      </ng-template>
-
+    
+            <p *ngFor="let result of lastRace.MRData.RaceTable.Races[0].Results; index as i">
+                {{i+1}}
+                {{ result.Driver.familyName }}
+                {{ result.Driver.givenName }}
+                {{ result.Constructor.name }}
+                {{ result.grid}} -->
+    <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].Time.time}} -->
+    <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].status}} -->
+    <!-- {{ lastRace.MRData.RaceTable.Races[0].Results[i].FastestLap.AverageSpeed.speed}} -->
+    <!-- </p>
+        </div> -->
 </div>

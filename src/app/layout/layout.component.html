@@ -24,14 +24,13 @@
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="main-up-toolbar">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <img src="../../assets/images/F1logo/32x32.png" alt="Logo F1">
       <span>Info Bay</span>
-
     </mat-toolbar>
     <!-- page content -->
     <router-outlet></router-outlet>
