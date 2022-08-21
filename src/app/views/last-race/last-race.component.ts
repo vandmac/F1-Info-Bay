@@ -11,18 +11,19 @@ import { LastRace, Race, } from '../../services/last-race/last-race';
 })
   
 export class LastRaceComponent implements OnInit {
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+
+  constructor (private lastRaceService: LastRaceService) {
+    this.lastRace$ = this.lastRaceService.getLastRace();
   }
-  
   displayedColumns: string[] = ['position', 'Driver'];
   public lastRace$: Observable<Race>;
+  
+  ngOnInit(): void {
+  }
 }
 
 
-  constructor(private lastRaceService: LastRaceService) {
-    this.lastRace$ = this.lastRaceService.getLastRace();
-  }
+ 
 
 
 
