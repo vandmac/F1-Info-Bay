@@ -21,9 +21,9 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'teams',
+    path: 'constructors',
     loadChildren: () =>
-      import('./views/teams/teams.module').then((m) => m.TeamsModule),
+      import('./views/constructors/constructors.module').then((m) => m.ConstructorsModule),
   },
   {
     path: 'drivers',

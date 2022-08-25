@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { LastRaceService } from '../../services/last-race/last-race.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { LastRace, Race } from '../../services/last-race/last-race';
+import { Race } from '../../services/last-race/last-race';
 
 @Component({
   selector: 'app-last-race',
