@@ -20,6 +20,14 @@
             <th mat-header-cell *matHeaderCellDef> Poz. startowa </th>
             <td mat-cell *matCellDef="let element"> {{element.grid}}</td>
         </ng-container>
+        <ng-container matColumnDef="Time">
+            <th mat-header-cell *matHeaderCellDef> Czas </th>
+            <td mat-cell *matCellDef="let element"> {{element.Time?.time}}</td>
+        </ng-container>
+        <ng-container matColumnDef="Status">
+            <th mat-header-cell *matHeaderCellDef> Status </th>
+            <td mat-cell *matCellDef="let element"> {{element.status}}</td>
+        </ng-container>
         <ng-container matColumnDef="Points">
             <th mat-header-cell *matHeaderCellDef> Punkty </th>
             <td mat-cell *matCellDef="let element"> {{element.points}}</td>

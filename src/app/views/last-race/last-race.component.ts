@@ -18,6 +18,8 @@ export class LastRaceComponent implements OnInit {
     'Driver',
     'Constructor',
     'Grid',
+    'Time',
+    'Status',
     'Points',
   ];
   public lastRace$: Observable<Race>;
