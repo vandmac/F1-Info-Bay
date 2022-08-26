@@ -12,13 +12,13 @@
 
 .mat-toolbar {
   background-color: darkred;
-  mat-primary {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+position: fixed;
 }
 
 .active {
   color: #76ee35;
+}
+
+mat-nav-list{
+  margin-top:60px;
 }
