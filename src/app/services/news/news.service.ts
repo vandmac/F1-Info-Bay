@@ -19,9 +19,9 @@ export class NewsService {
 
   constructor(private httpClient: HttpClient) {}
 
-  public getNews() {
-    return this.httpClient.get<News>(this.url, this.options).pipe(shareReplay());
-  }
+  // public getNews() {
+  //   return this.httpClient.get<News>(this.url, this.options).pipe(shareReplay());
+  // }
 }
 
 // public getLastRace() {
