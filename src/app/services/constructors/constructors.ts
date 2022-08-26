@@ -1,25 +1,25 @@
 export interface Constructors {
-    MRData?: MRData;
+    MRData: MRData;
 }
 
 export interface MRData {
-    xmlns?:            string;
-    series?:           string;
-    url?:              string;
-    limit?:            string;
-    offset?:           string;
-    total?:            string;
-    constructorTable?: ConstructorTable;
+    xmlns:            string;
+    series:           string;
+    url:              string;
+    limit:            string;
+    offset:           string;
+    total:            string;
+    constructorTable: ConstructorTable;
 }
 
 export interface ConstructorTable {
-    constructors?: Constructor[];
+    constructors: Constructor[];
 }
 
 export interface Constructor {
-    constructorID?: string;
-    url?:           string;
-    name?:          string;
-    nationality?:   string;
+    constructorID: string;
+    url:           string;
+    name:          string;
+    nationality:   string;
 }
 

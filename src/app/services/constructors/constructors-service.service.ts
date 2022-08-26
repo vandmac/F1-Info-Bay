@@ -8,11 +8,11 @@ import { Constructors } from './constructors';
 })
 export class ConstructorsService {
   constructor(private http: HttpClient) {}
-  public getConstructorTable() {
+  public getConstructorsTable() {
     return this.http
       .get<Constructors>('https://ergast.com/api/f1/constructors.json')
       .pipe(
-        map((response) => response.MRData?.constructorTable?.constructors),
+        map((response) => response.MRData.constructorTable.constructors),
         shareReplay()
       );
   }

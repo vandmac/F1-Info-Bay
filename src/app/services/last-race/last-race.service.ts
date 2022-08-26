@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { map, shareReplay } from 'rxjs/operators';
 import { LastRace } from './last-race';
 
-
 @Injectable({
   providedIn: 'root',
 })
@@ -12,6 +11,9 @@ export class LastRaceService {
   public getLastRace() {
     return this.http
       .get<LastRace>('https://ergast.com/api/f1/current/last/results.json')
-      .pipe(map(response=>response.MRData.RaceTable.Races[0]),shareReplay());
+      .pipe(
+        map((response) => response.MRData.RaceTable.Races[0]),
+        shareReplay()
+      );
   }
 }
