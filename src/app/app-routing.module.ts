@@ -21,10 +21,10 @@ const routes: Routes = [
       ),
   },
   {
-    path: 'constructors',
+    path: 'constructorsF1',
     loadChildren: () =>
-      import('./views/constructors/constructors.module').then(
-        (m) => m.ConstructorsModule
+      import('./views/constructorsF1/constructorsF1.module').then(
+        (m) => m.ConstructorsF1Module
       ),
   },
   {
