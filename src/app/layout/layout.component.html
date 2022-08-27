@@ -3,24 +3,38 @@
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/home']">Start</a>
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/news']">Aktualności</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/home']">
+        <mat-icon>home</mat-icon>Start
+      </a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/news']">
+        <mat-icon>feed</mat-icon>Aktualności
+      </a>
       <!-- <a mat-list-item href="#">Aktualności</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/last-race']">Ostatni wyścig</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/last-race']">
+        <mat-icon>pin_end</mat-icon>Ostatni wyścig
+      </a>
       <!-- <a mat-list-item href="#">Ostatni wyścig</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/constructorsF1']">Konstruktorzy</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/constructorsF1']">
+        <mat-icon>construction</mat-icon>Konstruktorzy
+      </a>
       <!-- <a mat-list-item href="#">Konstruktorzy</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/drivers']">Kierowcy</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/drivers']">
+        <mat-icon>people_alt</mat-icon>Kierowcy
+      </a>
       <!-- <a mat-list-item href="#">Kierowcy</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/races']">Wyścigi</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/races']"><mat-icon>timeline</mat-icon>Wyścigi</a>
       <!-- <a mat-list-item href="#">Wyścigi</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/circuits']">Tory</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/circuits']"><mat-icon>earbuds</mat-icon>Tory</a>
       <!-- <a mat-list-item href="#">Tory</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/statistics']">Statystyki</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/statistics']">
+        <mat-icon>analytics</mat-icon>Statystyki
+      </a>
       <!-- <a mat-list-item href="#">Statystyki</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/search-engine']">Wyszukiwarka</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/search-engine']">
+        <mat-icon>travel_explore</mat-icon>Wyszukiwarka
+      </a>
       <!-- <a mat-list-item href="#">Wyszukiwarka</a> -->
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/about']">O serwisie</a>
+      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/about']"><mat-icon>help_outline</mat-icon>O serwisie</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
