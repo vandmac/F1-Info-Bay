@@ -1,5 +1,11 @@
 <div *ngIf="(constructorsF1$ | async) as Constructors; else loading">
 
+    <mat-form-field appearance="standard">
+        <mat-label>Filtruj</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Szukaj" #input>
+    </mat-form-field>
+
+
     <table mat-table [dataSource]="Constructors" mat-elevation-z8>
         <ng-container matColumnDef="name">
             <th mat-header-cell *matHeaderCellDef> Nazwa </th>
@@ -11,10 +17,14 @@
         </ng-container>
         <ng-container matColumnDef="url">
             <th mat-header-cell *matHeaderCellDef> Wiki </th>
-            <td mat-cell *matCellDef="let element"> Info --> <a href="{{element.url}}" target="_blank">{{element.url}}</a> </td>
+            <td mat-cell *matCellDef="let element"> Info --> <a href="{{element.url}}"
+                    target="_blank">{{element.url}}</a> </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">Brak danych: "{{input.value}}"</td>
+          </tr>
     </table>
 </div>
 
