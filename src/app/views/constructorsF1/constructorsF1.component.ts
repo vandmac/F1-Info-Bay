@@ -13,12 +13,13 @@ import {
   styleUrls: ['./constructorsF1.component.scss'],
 })
 export class ConstructorsF1Component implements OnInit {
+
+  public constructorsF1$: Observable<Constructor[]>;
+  displayedColumns: string[] = ['name', 'nationality', 'url'];
+
   constructor(private constructorsF1Service: ConstructorsF1Service) {
     this.constructorsF1$ = this.constructorsF1Service.getConstructorsF1();
   }
-  displayedColumns: string[] = ['name', 'nationality', 'url'];
-
-  public constructorsF1$: Observable<Constructor[]>;
-
+  
   ngOnInit(): void {}
 }

@@ -10,9 +10,7 @@ import { LastRace, Race } from '../../services/last-race/last-race';
   styleUrls: ['./last-race.component.scss'],
 })
 export class LastRaceComponent implements OnInit {
-  constructor(private lastRaceService: LastRaceService) {
-    this.lastRace$ = this.lastRaceService.getLastRace();
-  }
+  public lastRace$: Observable<Race>;
   displayedColumns: string[] = [
     'Position',
     'Driver',
@@ -22,7 +20,10 @@ export class LastRaceComponent implements OnInit {
     'Status',
     'Points',
   ];
-  public lastRace$: Observable<Race>;
+
+  constructor(private lastRaceService: LastRaceService) {
+    this.lastRace$ = this.lastRaceService.getLastRace();
+  }
 
   ngOnInit(): void {}
 }
