@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+}
+table a {
+  color: white;
+}
+
+mat-header-cell, mat-cell {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}/*# sourceMappingURL=constructorsF1.component.css.map */

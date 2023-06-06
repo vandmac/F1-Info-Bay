@@ -1,0 +1,9 @@
+table {
+  width: 100%;
+}
+
+mat-header-cell, mat-cell {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}/*# sourceMappingURL=last-race.component.css.map */
